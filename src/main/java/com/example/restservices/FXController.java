@@ -6,6 +6,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -27,11 +28,13 @@ public class FXController{
 
     }
 
-    @PostMapping("/exchange")
-    public Exchange 
+@PostMapping(path = "/exchange", consumes = "application/json", produces = "application/json")
+public ExchangeResponse processExchange(@RequestBody ExchangeRequest exchangeRequest ){
 
+    String exchangeToPair = exchangeRequest.getExchangeTo();
+    
 
-
+}
 
 
 
