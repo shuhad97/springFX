@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class FXController{
 
     private static final String template = "Hello, %s ";
-    private final AtomicLong counter = new AtomicLong();
+
     private final Rates exchangeRates = new Rates();
 
     @GetMapping("/")
@@ -32,6 +32,9 @@ public class FXController{
 public ExchangeResponse processExchange(@RequestBody ExchangeRequest exchangeRequest ){
 
     String exchangeToPair = exchangeRequest.getExchangeTo();
+    double exchangeValue = exchangeRequest.getExchangeValue();
+    
+
     
 
 }

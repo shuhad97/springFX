@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Rates {
 
-    private static final Map<String,Double> rates = new HashMap<String, Double>() ;
+    private final Map<String,Double> rates = new HashMap<String, Double>() ;
 
     
 
