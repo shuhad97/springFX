@@ -18,12 +18,33 @@ public class ExchangeResponse {
     }
 
     public double outputCalculate(String quotePair){
-
+        
        Map<String, Double> rates = new Rates().getRates();
        
-       return input * rates.get(quotePair);
+       double fee = calculateFee(input);
 
+       double quote = (input-fee) * rates.get(quotePair);
+
+       return quote;
+       
     }
+
+    public double calculateFee(double amountSent){
+
+        if(amountSent < 1000){
+
+            return 25;
+
+        } else {
+
+            return amountSent * 0.01;
+
+        }
+        
+    }
+
+
+
 
 
     public String getBase(){

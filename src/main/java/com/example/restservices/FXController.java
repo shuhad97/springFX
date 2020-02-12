@@ -30,12 +30,19 @@ public class FXController{
 
 @PostMapping(path = "/exchange", consumes = "application/json", produces = "application/json")
 public ExchangeResponse processExchange(@RequestBody ExchangeRequest exchangeRequest ){
+    System.out.println(exchangeRequest.getExchangeTo() + "+++++");
+    System.out.println(exchangeRequest.getExchangeValue() + "+++++");
 
     String exchangeToPair = exchangeRequest.getExchangeTo();
     double exchangeValue = exchangeRequest.getExchangeValue();
     
+    ExchangeResponse response = new ExchangeResponse(exchangeValue, exchangeToPair);
+
 
     
+
+    return response;
+
 
 }
 
