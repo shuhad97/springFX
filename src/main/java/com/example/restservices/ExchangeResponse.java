@@ -23,6 +23,9 @@ public class ExchangeResponse {
        
        double fee = calculateFee(input);
 
+      System.out.println(rates.get(quotePair));
+
+
        double quote = (input-fee) * rates.get(quotePair);
 
        return quote;
