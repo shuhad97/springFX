@@ -1,6 +1,7 @@
 package com.example.restservices;
 
 import java.util.Map;
+import com.example.restservices.PairNotFoundException;
 
 public class ExchangeResponse {
 
@@ -18,15 +19,17 @@ public class ExchangeResponse {
     }
 
     public double outputCalculate(String quotePair){
-        
+       double quote;
        Map<String, Double> rates = new Rates().getRates();
        
        double fee = calculateFee(input);
 
-      System.out.println(rates.get(quotePair));
-
-
-       double quote = (input-fee) * rates.get(quotePair);
+        
+       try{
+        quote = (input-fee) * rates.get(quotePair);
+       } catch (Exception e){
+           throw new PairNotFoundException(quotePair);
+       }
 
        return quote;
        
