@@ -3,6 +3,9 @@ package com.example.restservices;
 import java.util.HashMap;
 import java.util.Map;
 
+
+//Class that keeps store of the rates
+
 public class Rates {
 
     private final Map<String,Double> rates = new HashMap<String, Double>() ;

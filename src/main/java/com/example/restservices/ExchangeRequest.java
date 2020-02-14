@@ -4,6 +4,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 
+//Class for deserializing  the JSON of request
 public class ExchangeRequest{
 
     @NotNull(message = "Please provide a pair")

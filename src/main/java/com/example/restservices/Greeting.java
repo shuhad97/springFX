@@ -1,6 +1,9 @@
 package com.example.restservices;
 
 
+
+//Greetings class to help format the display data.
+
 public class Greeting{
 
     private final long id;
